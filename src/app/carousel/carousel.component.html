@@ -1,6 +1,10 @@
 <div class="slideshow-container">
 
-    <div class="mySlides fade">
+    <div class="mySlides fade" *ngFor="let digImage of slides">
+        <img src={{digImage}} style="width:100%">
+    </div>
+
+    <!-- <div class="mySlides fade">
       <div class="numbertext">1 / 3</div>
       <img src="/assets/img/digImage1.jpg" style="width:100%">
       <div class="text">Caption Text</div>
@@ -16,16 +20,21 @@
       <div class="numbertext">3 / 3</div>
       <img src="/assets/img/digImage3.jpg" style="width:100%">
       <div class="text">Caption Three</div>
-    </div>
+    </div> -->
     
-    <a class="prev" (click)="plusSlides(-1)">❮</a>
-    <a class="next" (click)="plusSlides(1)">❯</a>
+    <!-- <a class="prev" (click)="plusSlides(-1)">❮</a>
+    <a class="next" (click)="plusSlides(1)">❯</a> -->
     
 </div>
-<br>
 
-<div style="text-align:center">
+<br>
+<div style="display:flex; justify-content: center;">
+    <div *ngFor="let digImage of slides; let i = index">
+        <span class="dot" (click)="currentSlide(i + 1)"></span> 
+    </div>
+</div>
+<!-- <div style="text-align:center">
     <span class="dot" (click)="currentSlide(1)"></span> 
     <span class="dot" (click)="currentSlide(2)"></span> 
     <span class="dot" (click)="currentSlide(3)"></span> 
-</div>
+</div> -->

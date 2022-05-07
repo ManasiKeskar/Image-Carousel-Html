@@ -9,6 +9,14 @@ export class CarouselComponent implements OnInit {
 
   slideIndex = 1;
 
+  slides = [
+    "/assets/img/digImage1.jpg",
+    "/assets/img/digImage2.jpg",
+    "/assets/img/digImage3.jpg"
+  ]
+
+  totalImages = this.slides.length;
+
   constructor() { 
   }
 
@@ -38,12 +46,10 @@ export class CarouselComponent implements OnInit {
     }
     for (i = 0; i < slides.length; i++) {
       slides[i].setAttribute("style", "display:none;");
-      // slides[i].style.display = "none";  
     }
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
-    // slides[this.slideIndex-1].style.display = "block";  
     slides[this.slideIndex-1].setAttribute("style", "display:block;");
     dots[this.slideIndex-1].className += " active";
   }
